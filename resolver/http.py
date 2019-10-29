@@ -45,7 +45,9 @@ class Resolver(AbstractRegexLinkResolver):
             sublime.error_message(
                 'Could not get link opener command.\nNot yet supported.')
             return None
-            
+		
+        content = re.sub("\]\[.*", "", content)
+		
         # cmd.exe quote is needed, http://ss64.com/nt/syntax-esc.html
         # escape these: ^\  ^&  ^|  ^>  ^<  ^^
         if sys.platform == 'win32':
@@ -55,7 +57,6 @@ class Resolver(AbstractRegexLinkResolver):
             content = content.replace("|", "^|")
             content = content.replace("<", "^<")
             content = content.replace(">", "^>")
-
 
         if sys.version_info[0] < 3:
             content = content.encode(sys.getfilesystemencoding())

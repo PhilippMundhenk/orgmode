@@ -44,6 +44,8 @@ class Resolver(AbstractRegexLinkResolver):
                 'Could not get link opener command.\nNot yet supported.')
             return None
 
+        content = re.sub("\]\[.*", "", content)
+
         # cmd.exe quote is needed, http://ss64.com/nt/syntax-esc.html
         # escape these: ^\  ^&  ^|  ^>  ^<  ^^
         if sys.platform == 'win32':

@@ -31,17 +31,23 @@
 			<key>match</key>
 			<string>^\s*[*]+ [^\[\]:\n]*</string>
 		</dict>
-				<dict>
+		<dict>
 			<key>name</key>
 			<string>orgmode.deadline</string>
 			<key>match</key>
-			<string>DEADLINE: &lt;\d{4}-\d{2}-\d{2}(?:\s*\w{3}&gt;|&gt;)</string>
+			<string>DEADLINE: (&lt;|\[)\d{4}-\d{2}-\d{2}( \w{3})?( \d{2}:\d{2})?( (.+|+|+\+|-|--)\d(d|h|w|m|y))?(&gt;|\])</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>orgmode.closed</string>
+			<key>match</key>
+			<string>CLOSED: (&lt;|\[)\d{4}-\d{2}-\d{2}( \w{3})?( \d{2}:\d{2})?( (.+|+|+\+|-|--)\d(d|h|w|m|y))?(&gt;|\])</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>orgmode.scheduled</string>
 			<key>match</key>
-			<string>SCHEDULED: &lt;\d{4}-\d{2}-\d{2}(?:\s*\w{3}&gt;|&gt;)</string>
+			<string>SCHEDULED: (&lt;|\[)\d{4}-\d{2}-\d{2}( \w{3})?( \d{2}:\d{2})?( (.+|+|+\+|-|--)\d(d|h|w|m|y))?(&gt;|\])</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -71,7 +77,7 @@
 			<key>name</key>
 			<string>orgmode.link</string>
 			<key>match</key>
-			<string>\[\[(.+?)?\]\]</string>
+			<string>(\[\[(.+?)?\]\]|http\S+)</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -104,13 +110,7 @@
 			<key>name</key>
 			<string>orgmode.tags</string>
 			<key>match</key>
-			<string>(^|\s):[\w\d:]+:</string>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>orgmode.todo</string>
-			<key>match</key>
-			<string>TODO|WORKING|DONE</string>
+			<string>(^|\s)?:[\w\d:]+:</string>
 		</dict>
 		<dict>
 			<key>name</key>
