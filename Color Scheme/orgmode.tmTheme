@@ -483,6 +483,39 @@
               <string>#AAFFAA</string>
            </dict>
         </dict>
+		<dict>
+            <key>name</key>
+            <string>orgmode scheduled</string>
+            <key>scope</key>
+            <string>orgmode.scheduled</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>#AAAAFF</string>
+           </dict>
+        </dict>
+		<dict>
+            <key>name</key>
+            <string>orgmode closed</string>
+            <key>scope</key>
+            <string>orgmode.closed</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>#AAFFAA</string>
+           </dict>
+        </dict>
+		<dict>
+            <key>name</key>
+            <string>orgmode deadline</string>
+            <key>scope</key>
+            <string>orgmode.deadline</string>
+            <key>settings</key>
+            <dict>
+              <key>foreground</key>
+              <string>#FFAAAA</string>
+           </dict>
+        </dict>
     
     </array>
 	<key>uuid</key>
